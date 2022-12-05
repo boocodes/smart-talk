@@ -14,3 +14,6 @@ ReactDOM.render(
 );
 
 export * from './pages';
+export * from './types';
+export * from './redux';
+export * from './hooks';
