@@ -25,7 +25,8 @@ function AppPage(props:Props){
     )
 }
 
-const ExternalWrapper = styled.div`
+const ExternalWrapper = styled.div` 
+    font-family: 'Gilroy';
     display: flex;
 `
 const WorkspaceInfoWrapper = styled.div`
@@ -40,7 +41,7 @@ const WorkspacesWrapper = styled.div`
 `
 const MessagesWrapper = styled.div`
     position: relative;
-    width: 50%;
+    width: 70%;
     background-color: green;
 `
 

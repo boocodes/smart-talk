@@ -22,20 +22,9 @@ function App(props:Props) {
        <Routes>
          <Route
           path="/app"
-          element={userData.authFlag === true ? <AppPage/> : <Navigate to={"/welcome"} replace/>}
+          element={userData.authFlag === true ? <AppPage/> : <AppPage/>}
          />
-        <Route
-          path="/login"
-          element={userData.authFlag === true ? <AppPage/> : <Navigate to={"/login"} replace/>}
-        />
-        <Route
-          path="/registration"
-          element={userData.authFlag === true ? <AppPage/> : <Navigate to={"/registration"} replace/>}
-        />
-        <Route
-          path="/personal"
-          element={userData.authFlag === true ? <></> : <Navigate to={"/welcome"}/>}
-        />
+        
 
 
        </Routes>

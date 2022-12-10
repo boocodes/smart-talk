@@ -1,0 +1,1 @@
+export {default as addNewWorkspaceModalWindow} from './addNewWorkspace';
