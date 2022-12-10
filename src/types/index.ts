@@ -4,3 +4,6 @@ export interface UserInterface {
     password: string,
     email: string,
 }
+export interface ModalWindowsInterface{
+    addNewWorkspaceModalFlag: boolean;
+}
