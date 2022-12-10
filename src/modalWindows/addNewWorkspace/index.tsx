@@ -9,10 +9,10 @@ function AddNewWorkspaceModalWindow(props:Props){
     return(
         <>
         
-        
         </>
     )
 }
+
 
 
 export default AddNewWorkspaceModalWindow;
