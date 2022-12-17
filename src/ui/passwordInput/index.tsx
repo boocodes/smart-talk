@@ -63,6 +63,7 @@ const ChangePasswordVisibilityButton = styled.a`
     z-index: 4;
 `
 const PasswordVisibilityIcon = styled.img`
+    width: 20px;
 `
 
 const Root = styled.input<RootProps>`

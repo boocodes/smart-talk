@@ -25,7 +25,7 @@ function RegistrationForm(props:Props){
     const {handleSubmit, getFieldState, getValues, control} = useForm<FormValues>();
 
     function registrateUser(values:FormValues){
-        if(values.email?.trim() || values.password?.trim() || values.username?.trim()){
+        if(!values.email?.trim() || !values.password?.trim() || !values.username?.trim()){
             return;
         }
         else{
