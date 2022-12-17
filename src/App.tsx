@@ -5,6 +5,7 @@ import {
     useAppSelector,
     selectUserData,
     UserInterface,
+    RegistrationPage,
 } from './';
 
 
@@ -23,6 +24,14 @@ function App(props:Props) {
          <Route
           path="/app"
           element={userData.authFlag === true ? <AppPage/> : <AppPage/>}
+         />
+         <Route
+          path="/"
+          element={userData.authFlag === true ? <Navigate to={'/app'} /> : <Navigate to={'/app'} />}
+         />
+         <Route
+          path="/registration"
+          element={userData.authFlag === true ? <Navigate to={"/app"} /> : <RegistrationPage/>}
          />
         
 
