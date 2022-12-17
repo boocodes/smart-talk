@@ -1,17 +1,19 @@
 import styled from "styled-components";
 
+
 interface Props{
 
 }
 
 
-function RegistrationPage(props:Props){
+function WorkspaceWrapper(props:Props){
     return(
         <>
-            
+        
+        
         </>
     )
 }
 
 
-export default RegistrationPage;
+export default WorkspaceWrapper;
