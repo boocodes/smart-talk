@@ -1,7 +1,7 @@
 import React, { Ref, RefObject } from 'react';
 import styled from 'styled-components';
 import {useState, useRef, RefAttributes} from 'react';
-import {RootState, useAppSelector} from '../..';
+import {RootState, useAppSelector} from '../../';
 
 interface Props{
     ref: any;
@@ -33,7 +33,7 @@ function PasswordInput(props:Props){
                 {passwordVisibilityFlag === true ? <RootInput type='text' {...props}/> : <RootInput type='password' {...props}/>}
                 <ChangePasswordVisibilityButton onClick={()=>{setPasswordVisibilityFlag(!passwordVisibilityFlag)}}>
                     <PasswordVisibilityIcon src={
-                        passwordVisibilityFlag === true ? './images/icons/showedPassword.svg' : './images/icons/hiddenPassword.svg'
+                        passwordVisibilityFlag === true ? './images/icons/showedPassword.png' : './images/icons/hiddenPassword.png'
                     }/>  
                 </ChangePasswordVisibilityButton>
             </>

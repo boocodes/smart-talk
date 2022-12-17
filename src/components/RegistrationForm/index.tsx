@@ -5,7 +5,8 @@ import {
     useAppSelector,
     PasswordInput,
     changeUserData,
-} from '../../';
+    SubmitButton,
+} from '../..';
 import {Controller, useForm, Control} from 'react-hook-form';
 
 
@@ -41,6 +42,7 @@ function RegistrationForm(props:Props){
                 name={"email"}
                 render={({ field: { onChange, onBlur, value, ref } }) => (
                     <TextInput
+                        ref={ref}
                         labelText="Email Adress"
                         type="email"
                         placeholder="example@mail.ru"
@@ -54,6 +56,7 @@ function RegistrationForm(props:Props){
                 name={"username"}
                 render={({ field: { onChange, onBlur, value, ref } }) => (
                     <TextInput
+                        ref={ref}
                         labelText="Username"
                         type="text"
                         placeholder="username"
@@ -63,18 +66,19 @@ function RegistrationForm(props:Props){
                   )}
             />
             <Controller
-                control={control}
-                name={"password"}
-                render={({ field: { onChange, onBlur, value, ref } }) => (
-                    <TextInput
-                        labelText="Password"
-                        type="password"
-                        placeholder=""
-                        onChange={(e:React.ChangeEvent<HTMLInputElement>)=>onChange(e)}
-                        value={value || ""}
-                    />
-                  )}
-            />
+                    control={control}
+                    name="password"
+                    render={({ field: { onChange, onBlur, value, ref } }) => (
+                        <PasswordInput
+                            ref={ref}
+                            labelText="Password"
+                            placeholder="password"
+                            onChange={(e:React.ChangeEvent<HTMLInputElement>)=>onChange(e)}
+                            value={value || ""}
+                        />
+                      )}
+                />
+            <SubmitButton text="Sign up" bgColor="#5736ff" textColor="white"/>
         
         
         </Form>
@@ -84,6 +88,7 @@ function RegistrationForm(props:Props){
 
 
 const Form = styled.form`
+    font-family: 'Gilroy';
     padding: 40px 0px;
     display: flex;
     flex-direction: column;

@@ -27,7 +27,7 @@ function App(props:Props) {
          />
          <Route
           path="/"
-          element={userData.authFlag === true ? <Navigate to={'/app'} /> : <Navigate to={'/app'} />}
+          element={userData.authFlag === true ? <Navigate to={'/app'} /> : <Navigate to={'/registration'} replace />}
          />
          <Route
           path="/registration"
