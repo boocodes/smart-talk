@@ -22,3 +22,4 @@ export * from './pages';
 export * from './types';
 export * from './redux';
 export * from './hooks';
+export * from './ui';
