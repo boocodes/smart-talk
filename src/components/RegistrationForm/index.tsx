@@ -23,7 +23,7 @@ function RegistrationForm(props:Props){
         username: string | undefined;
     }
     const {handleSubmit, getFieldState, getValues, control} = useForm<FormValues>();
-
+    
     function registrateUser(values:FormValues){
         if(!values.email?.trim() || !values.password?.trim() || !values.username?.trim()){
             return;

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {
     RegistrationForm,
+    CommonModalWindow,
 } from '../../';
 
 
@@ -12,6 +13,7 @@ interface Props{
 function RegistrationPage(props:Props){
     return(
         <ExternalForm>
+            <CommonModalWindow modalText="SMTH WRNG"/>
             <RegistrationForm/>
         </ExternalForm>
     )
