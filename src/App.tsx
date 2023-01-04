@@ -6,6 +6,7 @@ import {
     selectUserData,
     UserInterface,
     RegistrationPage,
+    
 } from './';
 
 
@@ -33,6 +34,7 @@ function App(props:Props) {
           path="/registration"
           element={userData.authFlag === true ? <Navigate to={"/app"} /> : <RegistrationPage/>}
          />
+         
         
 
 

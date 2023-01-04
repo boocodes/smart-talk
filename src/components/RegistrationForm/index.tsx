@@ -41,7 +41,7 @@ function RegistrationForm(props:Props){
             
             // dispatch(changeUserData({username: values.username, password: values.password, email: values.email}));
             // window.location.href = "/app";
-            axios.post('http://localhost/api/create_user.php', {
+            axios.post('http://localhost:3001/users', {
                 data: JSON.stringify(userBodyData),
                 headers: {
                     'Content-Type': 'application/json; charset=UTF-8',
@@ -51,6 +51,9 @@ function RegistrationForm(props:Props){
             })
                 .then((response)=>{
                     console.log(response);
+                })
+                .finally(()=>{
+                    window.location.href = '/login';
                 })
         }
     }
