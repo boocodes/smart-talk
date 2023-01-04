@@ -1,20 +1,8 @@
 {
   "users": [
     {
-      "data": "{\"firstname\":\"Nick\",\"lastname\":\"Felker\",\"email\":\"bebra@mail.ru\",\"password\":\"1234\"}",
-      "headers": {
-        "Content-Type": "application/json; charset=UTF-8"
-      },
-      "mode": "cors",
+      "data": "{\"firstname\":\"nick\",\"lastname\":\"felker\",\"email\":\"hello@mail.ru\",\"password\":\"1234\"}",
       "id": 1
-    },
-    {
-      "data": "{\"firstname\":\"Nick\",\"lastname\":\"Felker\",\"email\":\"bebra@mail.ru\",\"password\":\"1234\"}",
-      "headers": {
-        "Content-Type": "application/json; charset=UTF-8"
-      },
-      "mode": "cors",
-      "id": 2
     }
   ]
 }

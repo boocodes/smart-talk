@@ -5,6 +5,7 @@ import {
     useAppSelector,
     PasswordInput,
     changeUserData,
+    authUser,
     SubmitButton,
     CommonModalWindow,
 } from '../..';
@@ -43,16 +44,13 @@ function RegistrationForm(props:Props){
             // window.location.href = "/app";
             axios.post('http://localhost:3001/users', {
                 data: JSON.stringify(userBodyData),
-                headers: {
-                    'Content-Type': 'application/json; charset=UTF-8',
-                },
-                mode: 'cors',
                 
             })
                 .then((response)=>{
                     console.log(response);
                 })
                 .finally(()=>{
+                    dispatch(authUser({authFlag: true}));
                     window.location.href = '/login';
                 })
         }
