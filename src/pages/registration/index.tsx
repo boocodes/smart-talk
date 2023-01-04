@@ -13,7 +13,6 @@ interface Props{
 function RegistrationPage(props:Props){
     return(
         <ExternalForm>
-            <CommonModalWindow modalText="SMTH WRNG"/>
             <RegistrationForm/>
         </ExternalForm>
     )

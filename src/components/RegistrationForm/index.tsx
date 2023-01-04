@@ -6,7 +6,9 @@ import {
     PasswordInput,
     changeUserData,
     SubmitButton,
+    CommonModalWindow,
 } from '../..';
+import axios from "axios";
 import {Controller, useForm, Control} from 'react-hook-form';
 
 
@@ -20,23 +22,43 @@ function RegistrationForm(props:Props){
     interface FormValues {
         email: string | undefined;
         password: string | undefined;
-        username: string | undefined;
+        name: string | undefined;
+        lastname: string | undefined;
     }
     const {handleSubmit, getFieldState, getValues, control} = useForm<FormValues>();
-    
+
     function registrateUser(values:FormValues){
-        if(!values.email?.trim() || !values.password?.trim() || !values.username?.trim()){
+        if(!values.email?.trim() || !values.password?.trim() || !values.name?.trim() || !values.lastname?.trim()){
             return;
         }
         else{
-            dispatch(changeUserData({username: values.username, password: values.password, email: values.email}));
-            window.location.href = "/app";
+            const userBodyData = {
+                "firstname" : values.name,
+                "lastname" : values.lastname,
+                "email" : values.email,
+                "password" : values.password,
+            }
+            
+            // dispatch(changeUserData({username: values.username, password: values.password, email: values.email}));
+            // window.location.href = "/app";
+            axios.post('http://localhost/api/create_user.php', {
+                data: JSON.stringify(userBodyData),
+                headers: {
+                    'Content-Type': 'application/json; charset=UTF-8',
+                },
+                mode: 'cors',
+                
+            })
+                .then((response)=>{
+                    console.log(response);
+                })
         }
     }
 
 
     return (
-        <Form onSubmit={handleSubmit(registrateUser)}>
+       <>   
+            <Form onSubmit={handleSubmit(registrateUser)}>
             <Controller
                 control={control}
                 name={"email"}
@@ -53,13 +75,27 @@ function RegistrationForm(props:Props){
             />
             <Controller
                 control={control}
-                name={"username"}
+                name={"name"}
                 render={({ field: { onChange, onBlur, value, ref } }) => (
                     <TextInput
                         ref={ref}
-                        labelText="Username"
+                        labelText="First name"
                         type="text"
-                        placeholder="username"
+                        placeholder="First name"
+                        onChange={(e:React.ChangeEvent<HTMLInputElement>)=>onChange(e)}
+                        value={value || ""}
+                    />
+                  )}
+            />
+            <Controller
+                control={control}
+                name={"lastname"}
+                render={({ field: { onChange, onBlur, value, ref } }) => (
+                    <TextInput
+                        ref={ref}
+                        labelText="Last name"
+                        type="text"
+                        placeholder="Last name"
                         onChange={(e:React.ChangeEvent<HTMLInputElement>)=>onChange(e)}
                         value={value || ""}
                     />
@@ -82,6 +118,7 @@ function RegistrationForm(props:Props){
         
         
         </Form>
+       </>
     )
 
 } 
